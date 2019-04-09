@@ -1,7 +1,7 @@
 # noinspection RubyUnusedLocalVariable
 class Checkout
   attr_reader :item_list
-  
+
   def initialize
     @prices = {
       'A' => 50,
@@ -32,12 +32,12 @@ class Checkout
     checkout_value = 0
     @item_list = skus.chars
     @item_list.each { |item| checkout_value += @prices[item] }
-    checkout_value -= discounts(@item_list)
+    checkout_value -= special_offers(@item_list)
     
     checkout_value
   end
   
-  def discounts(item_list)
+  def special_offers(item_list)
     discount = 0
     
     quantity_of_A = item_list.count('A')
@@ -57,6 +57,7 @@ class Checkout
     discount
   end
 end
+
 
 
 
