@@ -41,4 +41,14 @@ describe Checkout do
   it 'any illegal input will return -1' do
     expect(Checkout.new.checkout('AxA')).to eq(-1)
   end
+
+  it 'buying 2E gets you one B free' do
+    basket = Checkout.new
+
+    basket.checkout('EE')
+    expect(Checkout.new.checkout('EE')).to eq 80
+    expect()
+
+  end
 end
+
