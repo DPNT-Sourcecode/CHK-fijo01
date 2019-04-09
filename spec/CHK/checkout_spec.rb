@@ -14,7 +14,8 @@ describe Checkout do
     expect(Checkout.new.checkout('ABCD')).to eq(50 + 30 + 20 + 15)
   end
 
-  it 'correctly discounts AAAA' do
+  it 'correctly discounts "AAAA"' do
     expect(Checkout.new.checkout('AAAA')).to eq(50 + 50 + 50 + 50 - 20)
   end
 end
+
