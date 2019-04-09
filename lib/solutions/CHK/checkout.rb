@@ -51,11 +51,14 @@ class Checkout
       discount += (discount_3A * 20)
     end
 
+    if @item_list.count('E')
+
     discount += (@item_list.count('B') / 2) * 15
 
     discount
   end
 end
+
 
 
 
