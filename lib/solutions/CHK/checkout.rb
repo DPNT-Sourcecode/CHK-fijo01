@@ -19,12 +19,15 @@ class Checkout
 
     item_list = skus.chars
 
-    tokenised_sku
+    item_list.each do |item|
+      checkout_value += prices[item]
+    end
 
-
+    checkout_value
   end
 
 end
+
 
 
 
