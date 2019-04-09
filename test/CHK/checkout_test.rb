@@ -19,4 +19,9 @@ class ClientTest < Minitest::Test
   def test_price_A
     assert_equal 50, Checkout.new.checkout('A'), 'Knows the price of a single unit of A'
   end
+
+  def test_special_A
+    assert_equal 130, Checkout.new.checkout('AAA'), '3A costs 130 because a discount of 20 is applied'
+  end
 end
+
