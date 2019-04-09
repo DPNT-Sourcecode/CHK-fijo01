@@ -32,7 +32,7 @@ class Checkout
 
     checkout_value
   end
-  
+
   def discounts(item_list)
     discount = 0
 
@@ -54,4 +54,5 @@ class Checkout
     discount
   end
 end
+
 
