@@ -15,5 +15,3 @@ class ClientTest < Minitest::Test
     assert_equal 'Hello, John!', Hello.new.hello('John'), 'App says hello to the name passed as String argument'    
   end
 end
-
-
