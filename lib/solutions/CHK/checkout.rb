@@ -40,20 +40,17 @@ class Checkout
 
     if quantity_of_A >= 5
       discount_5A = quantity_of_A / 5
+      discount += (discount_5A * 50)
       quantity_of_A -= discount_5A
     end
 
     if quantity_of_A >= 3
       discount_3A = quantity_of_A / 3
-      discount_3A = quantity_of_A / 3
+      discount += (discount_3A * 20)
     end
 
 
-    if  then discount_5A = quantity_of_A / 5 end
 
-
-    discount += (discount_5A * 50)
-    discount += (discount_3A * 20)
 
     # discount += (item_list.count('A') / 3) * 20
     discount += (item_list.count('B') / 2) * 15
@@ -62,6 +59,7 @@ class Checkout
   end
   
 end
+
 
 
 
