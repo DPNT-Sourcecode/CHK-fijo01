@@ -38,7 +38,7 @@ class Checkout
   def discounts(item_list)
     discount = 0
     
-    quantity_of_A = @item_list.count('A')
+    quantity_of_A = item_list.count('A')
     
     if quantity_of_A >= 5
       discount_5A = quantity_of_A / 5
@@ -51,16 +51,7 @@ class Checkout
       discount += (discount_3A * 20)
     end
     
-    discount += (@item_list.count('B') / 2) * 15
+    discount += (item_list.count('B') / 2) * 15
     discount
   end
 end
-
-
-
-
-
-
-
-
-

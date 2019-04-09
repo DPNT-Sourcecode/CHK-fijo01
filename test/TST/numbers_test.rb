@@ -11,4 +11,3 @@ class ClientTest < Minitest::Test
     assert_equal 1, One.new.apply
   end
 end
-

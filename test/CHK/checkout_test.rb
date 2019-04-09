@@ -49,4 +49,3 @@ class ClientTest < Minitest::Test
     assert_equal 40, Checkout.new.checkout('E'), 'Knows the price of a single unit of E'
   end
 end
-

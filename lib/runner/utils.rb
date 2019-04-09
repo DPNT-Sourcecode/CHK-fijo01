@@ -18,4 +18,3 @@ module Utils
                                    .set_hostname(read_from_config_file(:tdl_hostname))
   end
 end
-

@@ -68,4 +68,3 @@ TDL::ChallengeSession
   .with_config(Utils.get_config)
   .with_action_provider(UserInputAction.new(ARGV))
   .start
-

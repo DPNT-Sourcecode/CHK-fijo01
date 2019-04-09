@@ -7,4 +7,3 @@ class UserInputAction
     @argv.empty? ? gets.chomp : @argv[0]
   end
 end
-

@@ -4,4 +4,3 @@ class FizzBuzz
     raise 'Not implemented'
   end
 end
-

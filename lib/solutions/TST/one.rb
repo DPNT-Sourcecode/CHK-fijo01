@@ -4,4 +4,3 @@ class One
     1
   end
 end
-

@@ -4,4 +4,3 @@ class Story
     'Once upon a time'
   end
 end
-

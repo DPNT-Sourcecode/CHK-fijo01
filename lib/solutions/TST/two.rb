@@ -4,4 +4,3 @@ class Two
     1
   end
 end
-

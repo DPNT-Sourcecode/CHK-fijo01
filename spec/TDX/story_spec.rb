@@ -5,4 +5,3 @@ describe Story do
     expect(Story.new.read).to eq 'Once upon a time'
   end
 end
-
