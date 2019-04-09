@@ -40,6 +40,7 @@ class Checkout
   def special_offers()
     discount = 0
     
+    discount += a_specials
     # quantity_of_A = @item_list.count('A')
     
     # if quantity_of_A >= 5
@@ -76,3 +77,4 @@ class Checkout
   end
 
 end
+
