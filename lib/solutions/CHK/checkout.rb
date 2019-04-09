@@ -12,7 +12,6 @@ class Checkout
   # +------+-------+------------------------+
 
   def checkout(skus)
-
     return -1 unless /^[A-Z]*$/ === skus
 
     checkout_value = 0
@@ -23,15 +22,14 @@ class Checkout
       'C' => 20,
       'D' => 15
     }
-    
+
     prices.default = 0
-    
     item_list = skus.chars
-    
-    checkout_value -= discounts(item_list)
-    
+
     item_list.each { |item| checkout_value += prices[item] }
-    
+
+    checkout_value -= discounts(item_list)
+
     checkout_value
   end
   
@@ -53,6 +51,7 @@ class Checkout
   end
   
 end
+
 
 
 
