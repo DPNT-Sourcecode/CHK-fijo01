@@ -25,7 +25,8 @@ describe Checkout do
   it 'returns correct total checkout value for "AAAABBBCD"' do
     expect(Checkout.new.checkout('AAAABBBCD')).to eq((50 * 4) + (30 * 3) + 20 + 15 - 20 - 15)
   end
+
+  it 'handles lowercase SKU by upcase-ing them: "aaabcd"' do
+    expect(Checkout.new.checkout('aaabcd')).to eq((50 * 3) + 30 + 20 + 15 - 20)
+  end
 end
-
-
-
