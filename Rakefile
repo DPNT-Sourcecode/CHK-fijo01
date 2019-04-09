@@ -11,7 +11,8 @@ end
 
 RSpec::Core::RakeTask.new(:spec) do |t|
   t.pattern = "{,/*,/*/*}/**/*_spec.rb"
-  t.rspec_opts = "--require spec_helper"
+  t.rspec_opts = ['--color', '--require spec_helper', '--format documentation']
+
 end
 
 task default: [:spec, :test]
