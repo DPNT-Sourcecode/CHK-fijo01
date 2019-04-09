@@ -10,8 +10,13 @@ require_solution 'CHK'
 # +------+-------+----------------+
 
 describe Checkout do
-  it "returns total checkout value of the items" do
-    expect(Checkout.new.checkout('ABCD')).to eq (50+30+20+15)
+  it 'returns total checkout value of the items "ABCD"' do
+    expect(Checkout.new.checkout('ABCD')).to eq(50 + 30 + 20 + 15)
+  end
+
+  it "correctly discounts AAAA" do
+    expect(Checkout.new.checkout('AAAA')).to eq(50 + 50 + 50 + 50 - 20)
   end
 end
+
 
