@@ -19,6 +19,8 @@ class Checkout
 
     item_list = skus.chars
 
+    checkout_value -= discounts(item_list)
+
     item_list.each do |item|
       checkout_value += prices[item]
     end
@@ -26,4 +28,13 @@ class Checkout
     checkout_value
   end
 
+  def discounts(item_list)
+    discount = 0
+
+    
+
+    discount
+  end
+
 end
+
