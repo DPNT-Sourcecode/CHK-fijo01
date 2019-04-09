@@ -17,5 +17,10 @@ describe Checkout do
   it 'correctly discounts "AAAA"' do
     expect(Checkout.new.checkout('AAAA')).to eq(50 + 50 + 50 + 50 - 20)
   end
+
+  it 'correctly discounts "BBBB" - i.e. 2x 2B ' do
+    expect(Checkout.new.checkout('BBBB')).to eq(30 + 30 + 30 + 30 - 15 - 15)
+  end
 end
+
 
