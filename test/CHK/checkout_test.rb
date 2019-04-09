@@ -16,7 +16,8 @@ require_solution 'CHK'
 # +------+-------+----------------+
 
 class ClientTest < Minitest::Test
-  def test_CHK_R1
-    assert_equal 3, Sum.new.sum(1, 2), 'App should add two numbers'
+  def test_price_A
+    assert_equal 50, Checkout.new.checkout('A'), 'Knows the price of a single unit of A'
   end
 end
+
