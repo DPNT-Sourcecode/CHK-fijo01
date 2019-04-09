@@ -20,6 +20,8 @@ class Checkout
       'D' => 15
     }
 
+    prices.default = 0
+
     item_list = skus.gsub(/\W/, '').upcase.chars
 
     checkout_value -= discounts(item_list)
@@ -41,3 +43,4 @@ class Checkout
   end
 
 end
+
