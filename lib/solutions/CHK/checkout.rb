@@ -1,6 +1,19 @@
 # noinspection RubyUnusedLocalVariable
 class Checkout
+  
+  def initialize
+    @prices = {
+      'A' => 50,
+      'B' => 30,
+      'C' => 20,
+      'D' => 15,
+      'E' => 40
+    }
 
+    @prices.default = 0
+  end
+  
+  
   # +------+-------+------------------------+
   # | Item | Price | Special offers         |
   # +------+-------+------------------------+
@@ -15,20 +28,8 @@ class Checkout
     return -1 unless /^[A-Z]*$/ === skus
 
     checkout_value = 0
-
-    prices = {
-      'A' => 50,
-      'B' => 30,
-      'C' => 20,
-      'D' => 15,
-      'E' => 40
-    }
-
-    prices.default = 0
     item_list = skus.chars
-
-    item_list.each { |item| checkout_value += prices[item] }
-
+    item_list.each { |item| checkout_value += @prices[item] }
     checkout_value -= discounts(item_list)
 
     checkout_value
@@ -36,25 +37,26 @@ class Checkout
 
   def discounts(item_list)
     discount = 0
-
+    
     quantity_of_A = item_list.count('A')
-
+    
     if quantity_of_A >= 5
       discount_5A = quantity_of_A / 5
       discount += (discount_5A * 50)
       quantity_of_A -= discount_5A * 5
     end
-
+    
     if quantity_of_A >= 3
       discount_3A = quantity_of_A / 3
       discount += (discount_3A * 20)
     end
-
+    
     discount += (item_list.count('B') / 2) * 15
-
+    
     discount
   end
 end
+
 
 
 
