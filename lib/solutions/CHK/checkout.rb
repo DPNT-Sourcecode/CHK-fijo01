@@ -35,7 +35,7 @@ class Checkout
     checkout_value
   end
 
-  def discounts(@item_list)
+  def discounts(item_list)
     discount = 0
 
     quantity_of_A = @item_list.count('A')
@@ -56,6 +56,7 @@ class Checkout
     discount
   end
 end
+
 
 
 
