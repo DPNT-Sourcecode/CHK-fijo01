@@ -40,41 +40,39 @@ class Checkout
   def special_offers()
     discount = 0
     
-    quantity_of_A = @item_list.count('A')
+    # quantity_of_A = @item_list.count('A')
     
-    if quantity_of_A >= 5
-      discount_5A = quantity_of_A / 5
-      discount += (discount_5A * 50)
-      quantity_of_A -= discount_5A * 5
-    end
+    # if quantity_of_A >= 5
+    #   discount_5A = quantity_of_A / 5
+    #   discount += (discount_5A * 50)
+    #   quantity_of_A -= discount_5A * 5
+    # end
     
-    if quantity_of_A >= 3
-      discount_3A = quantity_of_A / 3
-      discount += (discount_3A * 20)
-    end
+    # if quantity_of_A >= 3
+    #   discount_3A = quantity_of_A / 3
+    #   discount += (discount_3A * 20)
+    # end
     
     discount += (@item_list.count('B') / 2) * 15
     discount
   end
 
-def a_specials()
-  quantity_of_A = @item_list.count('A')
+  def a_specials()
+    a_discounts = 0
+    quantity_of_A = @item_list.count('A')
+      
+    if quantity_of_A >= 5
+      discount_5A = quantity_of_A / 5
+      a_discounts += (discount_5A * 50)
+      quantity_of_A -= discount_5A * 5
+    end
     
-  if quantity_of_A >= 5
-    discount_5A = quantity_of_A / 5
-    discount += (discount_5A * 50)
-    quantity_of_A -= discount_5A * 5
+    if quantity_of_A >= 3
+      discount_3A = quantity_of_A / 3
+      a_discounts += (discount_3A * 20)
+    end
+
+    a_discounts
   end
-  
-  if quantity_of_A >= 3
-    discount_3A = quantity_of_A / 3
-    discount += (discount_3A * 20)
-  end
-end
 
 end
-
-
-
-
-
