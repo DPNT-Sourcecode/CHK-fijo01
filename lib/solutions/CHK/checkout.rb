@@ -40,11 +40,12 @@ class Checkout
   def discounts(item_list)
     discount = 0
 
-    discount += (item_list.count('A') / 3) * 20
+    quantity_of_A = item_list.count('A')    # discount += (item_list.count('A') / 3) * 20
     discount += (item_list.count('B') / 2) * 15
 
     discount
   end
 
 end
+
 
