@@ -41,19 +41,12 @@ class Checkout
     discount = 0
     
     quantity_of_A = item_list.count('A')
+    discount_5A = quantity_of_A / 5
+    quantity_of_A -= discount_5A
+    discount_3A = quantity_of_A / 3
 
-    5A_for 200 = (item_list.count('A') / 5)
-
-
-    until (quantity_of_A / 5).zero?
-      discounted = item_list.count('A') / 5
-      discount += discounted * 20
-      quantity_of_A -= 5
-    end
-    
-    until (quantity_of_A / 3).zero?
-
-    end
+    discount += (discount_5A * 50)
+    discount += (discount_3A * 20)
     
     # discount += (item_list.count('A') / 3) * 20
     discount += (item_list.count('B') / 2) * 15
@@ -62,5 +55,6 @@ class Checkout
   end
   
 end
+
 
 
