@@ -6,14 +6,15 @@ Logging.logger.root.appenders = Logging.appenders.stdout
 
 require_solution 'CHK'
 
-# +------+-------+----------------+
-# | Item | Price | Special offers |
-# +------+-------+----------------+
-# | A    | 50    | 3A for 130     |
-# | B    | 30    | 2B for 45      |
-# | C    | 20    |                |
-# | D    | 15    |                |
-# +------+-------+----------------+
+# +------+-------+------------------------+
+# | Item | Price | Special offers         |
+# +------+-------+------------------------+
+# | A    | 50    | 3A for 130, 5A for 200 |
+# | B    | 30    | 2B for 45              |
+# | C    | 20    |                        |
+# | D    | 15    |                        |
+# | E    | 40    | 2E get one B free      |
+# +------+-------+------------------------+
 
 class ClientTest < Minitest::Test
   def test_price_A
@@ -40,3 +41,4 @@ class ClientTest < Minitest::Test
     assert_equal 15, Checkout.new.checkout('D'), 'Knows the price of a single unit of D'
   end
 end
+

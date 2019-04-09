@@ -1,13 +1,14 @@
 require_solution 'CHK'
 
-# +------+-------+----------------+
-# | Item | Price | Special offers |
-# +------+-------+----------------+
-# | A    | 50    | 3A for 130     |
-# | B    | 30    | 2B for 45      |
-# | C    | 20    |                |
-# | D    | 15    |                |
-# +------+-------+----------------+
+# +------+-------+------------------------+
+# | Item | Price | Special offers         |
+# +------+-------+------------------------+
+# | A    | 50    | 3A for 130, 5A for 200 |
+# | B    | 30    | 2B for 45              |
+# | C    | 20    |                        |
+# | D    | 15    |                        |
+# | E    | 40    | 2E get one B free      |
+# +------+-------+------------------------+
 
 describe Checkout do
   it 'returns total checkout value of the items "ABCD"' do
@@ -41,3 +42,4 @@ describe Checkout do
     expect(Checkout.new.checkout('AxA')).to eq(-1)
   end
 end
+
