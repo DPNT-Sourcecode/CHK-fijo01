@@ -37,9 +37,16 @@ class Checkout
     discount = 0
 
     quantity_of_A = item_list.count('A')
+    puts 'quantity_of_A' + quantity_of_A
+
     discount_5A = quantity_of_A / 5
+    puts discount_5A
+
     quantity_of_A -= discount_5A
+    puts quantity_of_A
+
     discount_3A = quantity_of_A / 3
+    puts discount_3A
 
     discount += (discount_5A * 50)
     discount += (discount_3A * 20)
@@ -51,6 +58,7 @@ class Checkout
   end
   
 end
+
 
 
 
