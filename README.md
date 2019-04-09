@@ -1,13 +1,4 @@
-# tdl-warmup-ruby
+# My Notes for "Developer Insights" Tech Test
 
+- Testing framework is MiniTest. Found a quick reference: https://blog.teamtreehouse.com/short-introduction-minitest
 
-## 1. Requirements
-
-- `Ruby 2.2.2`
-- `bundler`
-
-## 2. How to start
-
-- Install dependencies `bundle install`
-- Open `lib/send_command_to_server.rb`
-- Read the comments as documentation, they will guide through the rest of the setup
