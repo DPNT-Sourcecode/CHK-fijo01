@@ -4,4 +4,3 @@ class Sum
     x + y
   end
 end
-

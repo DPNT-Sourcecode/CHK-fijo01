@@ -11,4 +11,3 @@ class ClientTest < Minitest::Test
     assert_equal 3, Sum.new.sum(1, 2), 'App should add two numbers'
   end
 end
-
