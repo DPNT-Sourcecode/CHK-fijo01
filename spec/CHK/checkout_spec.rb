@@ -41,5 +41,3 @@ describe Checkout do
     expect(Checkout.new.checkout('AxA')).to eq(-1)
   end
 end
-
-
