@@ -56,15 +56,16 @@ Logging.logger.root.appenders = Logging.appenders.stdout
 # noinspection RubyStringKeysInHashInspection
 
 runner = TDL::QueueBasedImplementationRunnerBuilder.new
-    .set_config(Utils.get_runner_config)
-    .with_solution_for('sum', -> (x, y) {Sum.new.sum(x, y)})
-    .with_solution_for('hello', -> (p) {Hello.new.hello(p)})
-    .with_solution_for('fizz_buzz', -> (p) {FizzBuzz.new.fizz_buzz(p)})
-    .with_solution_for('checkout', -> (p) {Checkout.new.checkout(p)})
-    .create
+                                                   .set_config(Utils.get_runner_config)
+                                                   .with_solution_for('sum', ->(x, y) { Sum.new.sum(x, y) })
+                                                   .with_solution_for('hello', ->(p) { Hello.new.hello(p) })
+                                                   .with_solution_for('fizz_buzz', ->(p) { FizzBuzz.new.fizz_buzz(p) })
+                                                   .with_solution_for('checkout', ->(p) { Checkout.new.checkout(p) })
+                                                   .create
 
 TDL::ChallengeSession
-    .for_runner(runner)
-    .with_config(Utils.get_config)
-    .with_action_provider(UserInputAction.new(ARGV))
-    .start
+  .for_runner(runner)
+  .with_config(Utils.get_config)
+  .with_action_provider(UserInputAction.new(ARGV))
+  .start
+

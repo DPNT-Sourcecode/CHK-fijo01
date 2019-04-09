@@ -1,6 +1,5 @@
 require 'java-properties'
 
-
 def read_from_config_file(key)
   properties = read_properties_file
   unescape(properties[key])
@@ -14,7 +13,7 @@ end
 
 def unescape(value)
   value.gsub! '\=', '='
-  if %w(true false).include? value.to_s
+  if %w[true false].include? value.to_s
     value.to_s == 'true'
   else
     value
@@ -22,9 +21,7 @@ def unescape(value)
 end
 
 def read_properties_file
-  begin
-    JavaProperties.load('config/credentials.config')
-  rescue StandardError => e
-    puts 'Could not load config: ' + e.message
-  end
+  JavaProperties.load('config/credentials.config')
+rescue StandardError => e
+  puts 'Could not load config: ' + e.message
 end

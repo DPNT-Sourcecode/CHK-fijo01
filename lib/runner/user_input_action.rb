@@ -1,5 +1,4 @@
 class UserInputAction
-  
   def initialize(argv)
     @argv = argv
   end
@@ -7,5 +6,5 @@ class UserInputAction
   def call
     @argv.empty? ? gets.chomp : @argv[0]
   end
-
 end
+
