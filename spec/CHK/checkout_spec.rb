@@ -33,6 +33,9 @@ describe Checkout do
   it 'ignores all non-alphabetic characters in the input string' do
     expect(Checkout.new.checkout('-A= b ')).to eq 80
   end
+
+  # req = checkout("AxA")
+  it 'ignores non-existent SKUs' do
+    expect(Checkout.new.checkout('AxA')).to eq 100
+  end
 end
-
-
