@@ -1,5 +1,6 @@
 # noinspection RubyUnusedLocalVariable
 class Checkout
+  attr_reader :item_list
   def initialize
     @prices = {
       'A' => 50,
@@ -55,3 +56,4 @@ class Checkout
     discount
   end
 end
+
