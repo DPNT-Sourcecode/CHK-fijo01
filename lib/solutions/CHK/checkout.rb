@@ -12,6 +12,8 @@ class Checkout
 
   def checkout(skus)
 
+    return -1 unless /^[A-Z]*$/ === skus
+
     checkout_value = 0
 
     prices = {
@@ -23,8 +25,12 @@ class Checkout
 
     prices.default = 0
 
+    return -1 unless /^[A-Z]*$/ === skus
+
     # item_list = skus.gsub(/\W/, '').upcase.chars
 
+    item_list = skus.chars
+    
     checkout_value -= discounts(item_list)
 
     item_list.each do |item|
@@ -44,5 +50,6 @@ class Checkout
   end
 
 end
+
 
 
