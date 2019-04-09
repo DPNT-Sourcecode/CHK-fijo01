@@ -31,7 +31,8 @@ describe Checkout do
   end
 
   it 'ignores all non-alphabetic characters in the input string' do
-    expect(Checkout.new.checkout('-A= ')).to eq 50
+    expect(Checkout.new.checkout('-A= b ')).to eq 80
   end
 end
+
 
