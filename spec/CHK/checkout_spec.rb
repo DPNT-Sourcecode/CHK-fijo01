@@ -46,9 +46,9 @@ describe Checkout do
     basket = Checkout.new
 
     basket.checkout('EE')
-    expect(Checkout.new.checkout('EE')).to eq 80
-    expect()
+    expect(basket.checkout('EE')).to eq 8
 
   end
 end
+
 
