@@ -11,13 +11,21 @@ class Checkout
 # +------+-------+----------------+
 
   def checkout(skus)
+    checkout_value = 0
 
-    tokenised_sku = skus.chars
+    prices = {
+      'A' => 50
+    }
+
+    item_list = skus.chars
+
+    tokenised_sku
 
 
   end
 
 end
+
 
 
 
