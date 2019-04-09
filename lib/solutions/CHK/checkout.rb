@@ -20,7 +20,7 @@ class Checkout
       'D' => 15
     }
 
-    item_list = skus.chars
+    item_list = skus.upcase.chars
 
     checkout_value -= discounts(item_list)
 
@@ -41,3 +41,4 @@ class Checkout
   end
 
 end
+
