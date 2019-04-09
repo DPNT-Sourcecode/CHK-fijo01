@@ -67,9 +67,10 @@ class Checkout
   end
 
   def 2E_special_offer()
-    
+    @item_list.push('B')
   end
 
 end
+
 
 
