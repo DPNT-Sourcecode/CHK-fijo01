@@ -10,6 +10,8 @@ class Checkout
     }
 
     @prices.default = 0
+
+    @item_list = []
   end
 
   # +------+-------+------------------------+
@@ -26,17 +28,17 @@ class Checkout
     return -1 unless /^[A-Z]*$/ === skus
 
     checkout_value = 0
-    item_list = skus.chars
-    item_list.each { |item| checkout_value += @prices[item] }
-    checkout_value -= discounts(item_list)
+    @item_list = skus.chars
+    @item_list.each { |item| checkout_value += @prices[item] }
+    checkout_value -= discounts(@item_list)
 
     checkout_value
   end
 
-  def discounts(item_list)
+  def discounts(@item_list)
     discount = 0
 
-    quantity_of_A = item_list.count('A')
+    quantity_of_A = @item_list.count('A')
 
     if quantity_of_A >= 5
       discount_5A = quantity_of_A / 5
@@ -49,11 +51,12 @@ class Checkout
       discount += (discount_3A * 20)
     end
 
-    discount += (item_list.count('B') / 2) * 15
+    discount += (@item_list.count('B') / 2) * 15
 
     discount
   end
 end
+
 
 
 
