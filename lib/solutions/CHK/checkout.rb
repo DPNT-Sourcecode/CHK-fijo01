@@ -39,22 +39,12 @@ class Checkout
   
   def special_offers()
     discount = 0
-    
+
     discount += a_specials
-    # quantity_of_A = @item_list.count('A')
-    
-    # if quantity_of_A >= 5
-    #   discount_5A = quantity_of_A / 5
-    #   discount += (discount_5A * 50)
-    #   quantity_of_A -= discount_5A * 5
-    # end
-    
-    # if quantity_of_A >= 3
-    #   discount_3A = quantity_of_A / 3
-    #   discount += (discount_3A * 20)
-    # end
-    
     discount += (@item_list.count('B') / 2) * 15
+
+    2E_special_offer
+
     discount
   end
 
@@ -76,5 +66,10 @@ class Checkout
     a_discounts
   end
 
+  def 2E_special_offer()
+    
+  end
+
 end
+
 
