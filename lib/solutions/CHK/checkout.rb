@@ -11,6 +11,7 @@ class Checkout
 # +------+-------+----------------+
 
   def checkout(skus)
+
     checkout_value = 0
 
     prices = {
@@ -22,7 +23,7 @@ class Checkout
 
     prices.default = 0
 
-    item_list = skus.gsub(/\W/, '').upcase.chars
+    # item_list = skus.gsub(/\W/, '').upcase.chars
 
     checkout_value -= discounts(item_list)
 
@@ -43,4 +44,5 @@ class Checkout
   end
 
 end
+
 

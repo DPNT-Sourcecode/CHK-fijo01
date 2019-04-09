@@ -30,12 +30,16 @@ describe Checkout do
     expect(Checkout.new.checkout('aaabcd')).to eq((50 * 3) + 30 + 20 + 15 - 20)
   end
 
-  it 'ignores all non-alphabetic characters in the input string' do
-    expect(Checkout.new.checkout('-A= b ')).to eq 80
-  end
+  # it 'ignores all non-alphabetic characters in the input string' do
+  #   expect(Checkout.new.checkout('-A= b ')).to eq 80
+  # end
+
+  # Missed the note!
+  # For any illegal input return -1
 
   # req = checkout("AxA")
   it 'ignores non-existent SKUs' do
     expect(Checkout.new.checkout('AxA')).to eq 100
   end
 end
+
