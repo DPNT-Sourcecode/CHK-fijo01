@@ -14,7 +14,8 @@ class Checkout
     checkout_value = 0
 
     prices = {
-      'A' => 50
+      'A' => 50,
+      'B' => 30
     }
 
     item_list = skus.chars
@@ -32,10 +33,12 @@ class Checkout
     discount = 0
 
     discount += (item_list.count('A') / 3) * 20
+    discount += (item_list.count('B') / 2) * 15
 
     discount
   end
 
 end
+
 
 
