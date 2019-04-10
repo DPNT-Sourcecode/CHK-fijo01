@@ -1,0 +1,4 @@
+AllCops:   
+  Exclude:     
+    - 'lib/send_command_to_server.rb'
+    - 'lib/runner/*'
