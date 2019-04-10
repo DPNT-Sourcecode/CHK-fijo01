@@ -27,14 +27,6 @@ describe Checkout do
     expect(Checkout.new.checkout('AAAABBBCD')).to eq((50 * 4) + (30 * 3) + 20 + 15 - 20 - 15)
   end
 
-  # it 'handles lowercase SKU by upcase-ing them: "aaabcd"' do
-  #   expect(Checkout.new.checkout('aaabcd')).to eq((50 * 3) + 30 + 20 + 15 - 20)
-  # end
-
-  # it 'ignores all non-alphabetic characters in the input string' do
-  #   expect(Checkout.new.checkout('-A= b ')).to eq 80
-  # end
-
   # Missed the note!
   # For any illegal input return -1
 
@@ -47,4 +39,5 @@ describe Checkout do
     expect(Checkout.new.checkout('EEB')).to eq 80
   end
 end
+
 
