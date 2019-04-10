@@ -66,8 +66,9 @@ class Checkout
     a_discounts
   end
 
-  def 2E_special_offer()
-    @item_list.push('B')
-  end
+  # def 2E_special_offer()
+  #   @item_list.push('B')
+  # end
 
 end
+
