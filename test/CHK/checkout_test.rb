@@ -15,6 +15,7 @@ require_solution 'CHK'
 # | C    | 20    |                        |
 # | D    | 15    |                        |
 # | E    | 40    | 2E get one B free      |
+# | F    | 10    | 2F get one F free      |
 # +------+-------+------------------------+
 
 class ClientTest < Minitest::Test
@@ -63,4 +64,5 @@ class ClientTest < Minitest::Test
     assert_equal 80, Checkout.new.checkout('EE'), 'When 2E, price normally. No discounts!'
   end
 end
+
 

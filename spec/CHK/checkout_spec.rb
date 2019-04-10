@@ -8,6 +8,7 @@ require_solution 'CHK'
 # | C    | 20    |                        |
 # | D    | 15    |                        |
 # | E    | 40    | 2E get one B free      |
+# | F    | 10    | 2F get one F free      |
 # +------+-------+------------------------+
 
 describe Checkout do
@@ -39,4 +40,5 @@ describe Checkout do
     expect(Checkout.new.checkout('EEB')).to eq 80
   end
 end
+
 
