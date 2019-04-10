@@ -57,10 +57,8 @@ class Checkout
       quantity_of_A -= discount_5A * 5
     end
     
-    # Refactor to reduce LOC:
-    if quantity_of_A >= 3
+    # Refactored to reduce LOC:
       (quantity_of_A / 3).times { a_discounts += 20 }
-    end
 
     a_discounts
   end
@@ -88,3 +86,4 @@ class Checkout
 
 
 end
+
