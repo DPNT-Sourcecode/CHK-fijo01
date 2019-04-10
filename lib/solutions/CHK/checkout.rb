@@ -57,9 +57,9 @@ class Checkout
       quantity_of_A -= discount_5A * 5
     end
     
+    # Refactor to reduce LOC:
     if quantity_of_A >= 3
-      discount_3A = quantity_of_A / 3
-      a_discounts += (discount_3A * 20)
+      (quantity_of_A / 3).times { a_discounts += 20 }
     end
 
     a_discounts
@@ -67,7 +67,7 @@ class Checkout
 
   def specials_B
     b_discounts = 0
-    
+
     # Free B when you buy 2E is a b_discount:
     free_b = @item_list.count('E') / 2
     free_b.times { b_discounts += @prices['B'] }
@@ -88,10 +88,3 @@ class Checkout
 
 
 end
-
-
-
-
-
-
-

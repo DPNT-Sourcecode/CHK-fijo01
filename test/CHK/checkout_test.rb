@@ -58,5 +58,3 @@ class ClientTest < Minitest::Test
     assert_equal 160, Checkout.new.checkout('EEEEBB'), 'When 4E, 2B are free (better than the 2B special)'
   end
 end
-
-

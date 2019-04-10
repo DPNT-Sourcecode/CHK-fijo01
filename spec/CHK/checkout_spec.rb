@@ -48,5 +48,3 @@ describe Checkout do
     expect(Checkout.new.checkout('EEB')).to eq 80
   end
 end
-
-
