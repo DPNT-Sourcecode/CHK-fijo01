@@ -74,7 +74,3 @@ class Checkout
     b_discounts
   end
 end
-
-
-
-

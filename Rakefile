@@ -22,4 +22,3 @@ desc 'Run the client'
 task :run do
   sh "ruby -I lib lib/send_command_to_server.rb #{ENV['action']}"
 end
-
