@@ -78,8 +78,9 @@ class ClientTest < Minitest::Test
     # R2 wording was bad. *Now* the free F is added by the system:
     basket = Checkout.new
     basket.checkout('FF')
-    assert_equal 3, basket.items_list.count('F'), 'Buy 2F, one F free)'
+    assert_equal 3, basket.item_list.count('F'), 'Buy 2F, one F free)'
   end
 end
+
 
 
