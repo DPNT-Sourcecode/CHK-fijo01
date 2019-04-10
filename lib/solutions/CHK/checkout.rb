@@ -90,6 +90,3 @@ class Checkout
   end
 
 end
-
-
-
