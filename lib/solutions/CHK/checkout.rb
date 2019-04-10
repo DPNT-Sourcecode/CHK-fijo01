@@ -66,7 +66,8 @@ class Checkout
   end
 
   def specials_B
-    # 
+    (@item_list.count('E') / 2).times { b_discounts += @prices['B'] }
+
     (@item_list.count('B') / 2) * 15
   end
 
@@ -80,6 +81,7 @@ class Checkout
 
 
 end
+
 
 
 
