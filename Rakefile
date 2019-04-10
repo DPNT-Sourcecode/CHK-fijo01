@@ -10,7 +10,7 @@ Rake::TestTask.new(:test) do |t|
 end
 
 RSpec::Core::RakeTask.new(:spec) do |t|
-  t.pattern = "{,/*,/*/*}/**/*_spec.rb"
+  t.pattern = '{,/*,/*/*}/**/*_spec.rb'
   t.rspec_opts = ['--require spec_helper', '--format documentation']
 end
 
@@ -22,3 +22,4 @@ desc 'Run the client'
 task :run do
   sh "ruby -I lib lib/send_command_to_server.rb #{ENV['action']}"
 end
+
