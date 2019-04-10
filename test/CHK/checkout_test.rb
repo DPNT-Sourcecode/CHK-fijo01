@@ -48,4 +48,10 @@ class ClientTest < Minitest::Test
   def test_price_E
     assert_equal 40, Checkout.new.checkout('E'), 'Knows the price of a single unit of E'
   end
+
+  # Add failed deploy-tests
+  def test_freeB
+    assert_equal 80, Checkout.new.checkout('EEB'), 'When 2E, B is free'
+  end
 end
+
