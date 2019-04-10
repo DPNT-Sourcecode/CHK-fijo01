@@ -10,12 +10,11 @@ class Checkout
       'D' => 15,
       'E' => 40
     }
-    
+
     @prices.default = 0
-    
     @item_list = []
   end
-  
+
   # +------+-------+------------------------+
   # | Item | Price | Special offers         |
   # +------+-------+------------------------+
@@ -25,18 +24,18 @@ class Checkout
   # | D    | 15    |                        |
   # | E    | 40    | 2E get one B free      |
   # +------+-------+------------------------+
-  
+
   def checkout(skus)
     return -1 unless /^[A-Z]*$/ === skus
-    
+
     checkout_value = 0
     @item_list = skus.chars
     @item_list.each { |item| checkout_value += @prices[item] }
-    checkout_value -= special_offers()
-    
+    checkout_value -= special_offers
+
     checkout_value
   end
-  
+
   def special_offers
     discount = 0
 
@@ -67,12 +66,13 @@ class Checkout
   end
 
   def specials_B
+    # 
     (@item_list.count('B') / 2) * 15
   end
 
   def specials_E
     e_discounts = 0
-    (@item_list.count('E') / 2).times { e_discounts += @prices['B'] }
+    # (@item_list.count('E') / 2).times { e_discounts += @prices['B'] }
     # free item is added by user, not checkout... so discount it
     e_discounts
   end
@@ -80,6 +80,7 @@ class Checkout
 
 
 end
+
 
 
 
