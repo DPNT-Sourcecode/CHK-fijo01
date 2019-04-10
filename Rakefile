@@ -1,7 +1,7 @@
 require 'rake/testtask'
 require 'rspec/core/rake_task'
 
-#~~~~~~~ Test
+# ~~~~~~~ Test
 
 Rake::TestTask.new(:test) do |t|
   t.libs << 'test'
@@ -16,7 +16,7 @@ end
 
 task default: [:spec, :test]
 
-#~~~~~~~~~ Play
+# ~~~~~~~~~ Play
 
 desc 'Run the client'
 task :run do

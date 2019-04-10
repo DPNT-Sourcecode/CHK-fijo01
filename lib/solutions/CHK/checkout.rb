@@ -48,15 +48,15 @@ class Checkout
   def specials_A
     a_discounts = 0
     quantity_of_A = @item_list.count('A')
-      
+
     if quantity_of_A >= 5
       discount_5A = quantity_of_A / 5
       a_discounts += (discount_5A * 50)
       quantity_of_A -= discount_5A * 5
     end
-    
+
     # Refactored to reduce LOC:
-      (quantity_of_A / 3).times { a_discounts += 20 }
+    (quantity_of_A / 3).times { a_discounts += 20 }
 
     a_discounts
   end
@@ -73,9 +73,7 @@ class Checkout
 
     b_discounts
   end
-
-
-
 end
+
 
 
