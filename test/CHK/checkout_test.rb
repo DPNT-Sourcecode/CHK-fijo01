@@ -58,4 +58,9 @@ class ClientTest < Minitest::Test
   def test_double_freeB
     assert_equal 160, Checkout.new.checkout('EEEEBB'), 'When 4E, 2B are free (better than the 2B special)'
   end
+
+  def test_EE
+    assert_equal 80, Checkout.new.checkout('EE'), 'When 2E, price normally. No discounts!'
+  end
 end
+

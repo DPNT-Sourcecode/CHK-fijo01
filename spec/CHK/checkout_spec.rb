@@ -35,7 +35,8 @@ describe Checkout do
   end
 
   # free item is added by user, not checkout... so discount it
-  it 'buying 2E gets you one B free' do
+  it 'buying 2E gets you the B free, if B also purchased' do
     expect(Checkout.new.checkout('EEB')).to eq 80
   end
 end
+

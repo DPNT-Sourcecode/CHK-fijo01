@@ -62,15 +62,22 @@ class Checkout
   end
 
   def specials_b
+    number_of_b = @item_list.count('B')
     b_discounts = 0
 
     # Free B when you buy 2E is a b_discount:
-    free_b = @item_list.count('E') / 2
-    free_b.times { b_discounts += @prices['B'] }
+    # But only discount B if one is checked out!
+
+    unless number_of_b.zero?
+      free_b = @item_list.count('E') / 2
+      free_b.times { b_discounts += @prices['B'] }   
+    end
+
     # Now handle remainder B:
-    remaining_b = @item_list.count('B') - free_b
+    remaining_b = number_of_b - free_b
     (remaining_b / 2).times { b_discounts += 15 }
 
     b_discounts
   end
 end
+
