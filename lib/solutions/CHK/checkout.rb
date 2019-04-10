@@ -23,8 +23,9 @@ class Checkout
   # | C    | 20    |                        |
   # | D    | 15    |                        |
   # | E    | 40    | 2E get one B free      |
+  # | F    | 10    | 2F get one F free      |
   # +------+-------+------------------------+
-
+  
   def checkout(skus)
     return -1 unless /^[A-Z]*$/ === skus
 
@@ -80,5 +81,6 @@ class Checkout
     b_discounts
   end
 end
+
 
 
