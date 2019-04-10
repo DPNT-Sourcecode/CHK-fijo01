@@ -43,6 +43,7 @@ class Checkout
 
     discount += specials_a
     discount += specials_b
+    discount += specials_f
 
     discount
   end
@@ -84,11 +85,10 @@ class Checkout
 
   def specials_f
     f_discounts = 0
-    
     @item_list.count('F').times { @item_list.push('F') }
-
     f_discounts
   end
 
 end
+
 
