@@ -63,6 +63,15 @@ class ClientTest < Minitest::Test
   def test_EE
     assert_equal 80, Checkout.new.checkout('EE'), 'When 2E, price normally. No discounts!'
   end
+
+  def test_price_F
+    assert_equal 10, Checkout.new.checkout('F'), 'Correctly prices a single F'
+  end
+
+  def test_FF
+    assert_equal 20, Checkout.new.checkout('FF'), 'Correctly prices a single F'
+  end
 end
+
 
 
