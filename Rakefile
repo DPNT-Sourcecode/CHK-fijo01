@@ -1,7 +1,7 @@
 require 'rake/testtask'
 require 'rspec/core/rake_task'
 
-# ~~~~~~~ Test
+#~~~~~~~ Test
 
 Rake::TestTask.new(:test) do |t|
   t.libs << 'test'
@@ -10,13 +10,13 @@ Rake::TestTask.new(:test) do |t|
 end
 
 RSpec::Core::RakeTask.new(:spec) do |t|
-  t.pattern = '{,/*,/*/*}/**/*_spec.rb'
+  t.pattern = "{,/*,/*/*}/**/*_spec.rb"
   t.rspec_opts = ['--require spec_helper', '--format documentation']
 end
 
-task default: %i[spec test]
+task default: [:spec, :test]
 
-# ~~~~~~~~~ Play
+#~~~~~~~~~ Play
 
 desc 'Run the client'
 task :run do
