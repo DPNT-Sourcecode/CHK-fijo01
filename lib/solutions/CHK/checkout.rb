@@ -67,10 +67,13 @@ class Checkout
   end
 
   def specials_2E
+    e_discounts = 0
     (@item_list.count('E') / 2).times { @item_list.push('B') }
+    e_discounts
   end
 
 end
+
 
 
 
