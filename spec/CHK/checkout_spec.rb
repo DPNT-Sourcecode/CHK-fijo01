@@ -45,11 +45,8 @@ describe Checkout do
 
   # free item is added by user, not checkout... so discount it
   it 'buying 2E gets you one B free' do
-    basket = Checkout.new
-
-    # basket.checkout('EE')
-    expect(basket.checkout('EEB')).to eq 80
-    # expect(basket.item_list).to include('B')
+    expect(Checkout.new.checkout('EEB')).to eq 80
   end
 end
+
 
