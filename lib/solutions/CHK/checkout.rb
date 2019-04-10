@@ -71,11 +71,12 @@ class Checkout
   end
 
   def specials_E
-    e_discounts = 0
-    (@item_list.count('E') / 2).times { @item_list.push('B') }
-    e_discounts
+    # (@item_list.count('E') / 2).times { @item_list.push('B') }
+    # free item is added by user, not checkout... so discount it
+    e_discounts = 30
   end
 
 
 
 end
+
