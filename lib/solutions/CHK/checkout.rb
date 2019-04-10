@@ -43,7 +43,7 @@ class Checkout
     discount += specials_A
     discount += (@item_list.count('B') / 2) * 15
 
-    specials_2E
+    discount += specials_2E
 
     discount
   end
@@ -73,6 +73,7 @@ class Checkout
   end
 
 end
+
 
 
 
