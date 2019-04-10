@@ -67,9 +67,10 @@ class Checkout
   end
 
   def special_2E
-    @item_list.push('B')
+    (@item_list.count('E') / 2).times { @item_list.push('B') }
   end
 
 end
+
 
 

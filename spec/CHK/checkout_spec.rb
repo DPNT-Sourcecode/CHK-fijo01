@@ -47,6 +47,7 @@ describe Checkout do
 
     basket.checkout('EE')
     expect(basket.checkout('EE')).to eq 80
-    expect(basket.item_list).to include('b')
+    expect(basket.item_list).to include('B')
   end
 end
+
