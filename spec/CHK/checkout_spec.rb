@@ -50,4 +50,3 @@ describe Checkout do
     expect(basket.item_list).to include('B')
   end
 end
-
