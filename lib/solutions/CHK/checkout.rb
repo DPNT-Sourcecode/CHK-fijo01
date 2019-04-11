@@ -135,8 +135,3 @@ class Checkout
     k_discounts
   end
 end
-
-
-
-
-
