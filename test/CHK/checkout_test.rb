@@ -220,8 +220,10 @@ class ClientTest < Minitest::Test
     # PPPPPP QQQ RRR S UUUU VVV
     # 250 + [80 + 150(Free Q?)]  + 30 + 120 + 130
     # Q=30
-    assert_equal 740, basket, '4F, pay for 3F because third free'
+    # R5 pricing: S=20, was 30
+    assert_equal 730, basket, '4F, pay for 3F because third free'
   end
 end
+
 
 
