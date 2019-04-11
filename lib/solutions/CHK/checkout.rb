@@ -4,12 +4,7 @@ class Checkout
 
   def initialize
     @prices = {
-      'A' => 50,
-      'B' => 30,
-      'C' => 20,
-      'D' => 15,
-      'E' => 40,
-      'F' => 10
+      'A' => 50, 'B' => 30, 'C' => 20, 'D' => 15, 'E' => 40, 'F' => 10
     }
 
     @prices.default = 0
@@ -112,4 +107,5 @@ class Checkout
     f_discounts
   end
 end
+
 
