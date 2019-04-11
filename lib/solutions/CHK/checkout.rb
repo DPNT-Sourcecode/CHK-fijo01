@@ -35,6 +35,9 @@ class Checkout
     group_accumulator = 0
     discount_group = []
 
+    items_in_group = @item_list.select {|item| ['S', 'T', 'X', 'Y', 'Z'].include?(item)}
+
+    p items_in_group
     # @item_list.each |item| do
       # notice if item is part of discounted group
       # if we see one, increment accumulator and remember the item
@@ -200,6 +203,7 @@ class Checkout
     v_discounts
   end
 end
+
 
 
 
