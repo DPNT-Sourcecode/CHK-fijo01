@@ -126,7 +126,7 @@ class Checkout
 
     h_discounts
   end
-
 end
+
 
 

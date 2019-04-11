@@ -156,11 +156,15 @@ class ClientTest < Minitest::Test
   end
 
   def test_special_5H
-    assert_equal 45, Checkout.new.checkout('HHHHH'), 'discount 5 for 5H'    
+    assert_equal 45, Checkout.new.checkout('HHHHH'), 'discount 5 for 5H'
   end
 
   def test_special_10H
-    assert_equal 80, Checkout.new.checkout('HHHHHHHHHH'), 'discount 20 for 10H'    
+    assert_equal 80, Checkout.new.checkout('HHHHHHHHHH'), 'discount 20 for 10H'
+  end
+
+  def test_special_2K
+    assert_equal 150, Checkout.new.checkout('KK'), 'discount 10 for 10H'
   end
 
   # Add failed deploy-tests
@@ -192,6 +196,7 @@ class ClientTest < Minitest::Test
     assert_equal 30, basket, '4F, pay for 3F because third free'
   end
 end
+
 
 
 
