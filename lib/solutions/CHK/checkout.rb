@@ -157,7 +157,3 @@ class Checkout
     m_discounts
   end
 end
-
-
-
-
