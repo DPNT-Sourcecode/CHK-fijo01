@@ -19,11 +19,22 @@ class Checkout
     return -1 unless /^[A-Z]*$/ === skus
 
     checkout_value = 0
-    @item_list = skus.chars
+    @item_list = skus.chars.sort
     @item_list.each { |item| checkout_value += @prices[item] }
+    
+    checkout_value -= group_specials
+    
     checkout_value -= special_offers
 
     checkout_value
+  end
+
+  def group_specials
+    group_discount = 0
+
+
+
+    group_discount
   end
 
   def special_offers
@@ -173,3 +184,4 @@ class Checkout
     v_discounts
   end
 end
+
