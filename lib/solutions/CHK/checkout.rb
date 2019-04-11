@@ -69,6 +69,7 @@ class Checkout
     discount += specials_p
     discount += specials_q
     discount += specials_u
+    discount += specials_v
 
     discount
   end
@@ -186,7 +187,10 @@ class Checkout
   end
 
   def specials_v
+    quantity_of_v = @item_list.count('V')
     v_discounts = 0
+    
     v_discounts
   end
 end
+
