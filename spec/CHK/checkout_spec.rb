@@ -33,4 +33,3 @@ describe Checkout do
     expect(Checkout.new.checkout('XYZ')).to eq 45
   end
 end
-
