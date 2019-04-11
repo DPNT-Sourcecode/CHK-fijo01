@@ -88,11 +88,7 @@ class Checkout
     free_f = number_of_f / 3 # every third F is free
     f_discounts = 0
 
-
-    if (number_of_f % 3).zero? # at least one F free
-
-    end
-
+    number_of_f.times { |item_f| (number_of_f % 3)}
 
     unless number_of_f.zero?
       free_b.times { b_discounts += @prices['B'] }   
@@ -103,4 +99,5 @@ class Checkout
   end
 
 end
+
 
