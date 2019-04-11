@@ -89,11 +89,6 @@ class Checkout
 
     number_of_f.times { |f| (f_discounts += @prices['F']) if ((f + 1) % 3).zero? }
 
-    # free item should be added by shopper, not checkout
-    # (@item_list.count('F') / 2).times { @item_list.push('F') }
     f_discounts
   end
 end
-
-
-

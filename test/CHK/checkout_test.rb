@@ -79,20 +79,8 @@ class ClientTest < Minitest::Test
     assert_equal 40, basket, '6F should be price of 4F'
   end
 
-  # def test_FF_extra_free
-  #   # R2 wording was bad. *Now* the free F is added by the system:
-  #   basket = Checkout.new
-  #   basket.checkout('FF')
-  #   assert_equal 3, basket.item_list.count('F'), 'Buy 2F, one F free)'
-  # end
-
-  # Result is: FAILED
-  # Some requests have failed (6/46). Here are some of them:
-  #  - {"method":"checkout","params":["FFF"],"id":"CHK_R3_040"}, expected: 20, got: 30
-  #  - {"method":"checkout","params":["FFFF"],"id":"CHK_R3_041"}, expected: 30, got: 40
-  #  - {"method":"checkout","params":["FFFFFF"],"id":"CHK_R3_042"}, expected: 40, got: 60
-  # You have received a penalty of: 10 min
+  def test_FFFF
+    basket = Checkout.new.checkout('FFFF')
+    assert_equal 30, basket, '4F, pay for 3F because third free'
+  end
 end
-
-
-
