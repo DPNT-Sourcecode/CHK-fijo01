@@ -32,7 +32,9 @@ class Checkout
   def group_specials
     group_discount = 0
 
-    items_in_group = ['S', 'T', 'X', 'Y', 'Z']
+    # items_in_group = ['S', 'T', 'X', 'Y', 'Z']
+
+
 
     # valid_for_group_discount
 
@@ -52,8 +54,6 @@ class Checkout
     discount += specials_q
     discount += specials_u
     discount += specials_v
-
-    discount
   end
 
   def specials_a
@@ -186,3 +186,4 @@ class Checkout
     v_discounts
   end
 end
+
