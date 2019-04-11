@@ -73,7 +73,7 @@ class Checkout
     # But only discount B if one is checked out!
 
     unless number_of_b.zero?
-      free_b.times { b_discounts += @prices['B'] }   
+      free_b.times { b_discounts += @prices['B'] }
     end
 
     # Now handle remainder B:
@@ -85,19 +85,15 @@ class Checkout
 
   def specials_f
     number_of_f = @item_list.count('F')
-    free_f = number_of_f / 3 # every third F is free
     f_discounts = 0
 
-    number_of_f.times { |item_f| (number_of_f % 3)}
+    number_of_f.times { |f| (f_discounts += @prices['F']) if ((f + 1) % 3).zero? }
 
-    unless number_of_f.zero?
-      free_b.times { b_discounts += @prices['B'] }   
-    end
     # free item should be added by shopper, not checkout
     # (@item_list.count('F') / 2).times { @item_list.push('F') }
     f_discounts
   end
-
 end
+
 
 
