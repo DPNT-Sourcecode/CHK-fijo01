@@ -111,6 +111,3 @@ class Checkout
     f_discounts
   end
 end
-
-
-
