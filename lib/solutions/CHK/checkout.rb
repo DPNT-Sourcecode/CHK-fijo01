@@ -64,6 +64,7 @@ class Checkout
     discount += specials_b
     discount += specials_f
     discount += specials_h
+    discount += specials_k
 
     discount
   end
@@ -126,7 +127,15 @@ class Checkout
 
     h_discounts
   end
+
+  def specials_k
+    number_of_k = @item_list.count('B')
+    b_discounts = 0
+    number_of_k.times { |k| (k_discounts += 10) if ((k + 1) % 2).zero? }
+    b_discounts
+  end
 end
+
 
 
 
