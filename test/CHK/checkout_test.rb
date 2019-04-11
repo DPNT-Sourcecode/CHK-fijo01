@@ -62,7 +62,7 @@ class ClientTest < Minitest::Test
 
   def test_price_K
     # Edited for new price K=70, was 80
-    assert_equal 80, Checkout.new.checkout('K'), 'Correctly prices a single K'
+    assert_equal 70, Checkout.new.checkout('K'), 'Correctly prices a single K'
   end
 
   def test_price_L
@@ -94,7 +94,7 @@ class ClientTest < Minitest::Test
   end
 
   def test_price_S
-    assert_equal 30, Checkout.new.checkout('S'), 'Correctly prices a single S'
+    assert_equal 20, Checkout.new.checkout('S'), 'Correctly prices a single S'
   end
 
   def test_price_T
@@ -114,15 +114,15 @@ class ClientTest < Minitest::Test
   end
 
   def test_price_X
-    assert_equal 90, Checkout.new.checkout('X'), 'Correctly prices a single X'
+    assert_equal 17, Checkout.new.checkout('X'), 'Correctly prices a single X'
   end
 
   def test_price_Y
-    assert_equal 10, Checkout.new.checkout('Y'), 'Correctly prices a single Y'
+    assert_equal 20, Checkout.new.checkout('Y'), 'Correctly prices a single Y'
   end
 
   def test_price_Z
-    assert_equal 50, Checkout.new.checkout('Z'), 'Correctly prices a single Z'
+    assert_equal 21, Checkout.new.checkout('Z'), 'Correctly prices a single Z'
   end
 
   def test_special_5H
@@ -134,7 +134,7 @@ class ClientTest < Minitest::Test
   end
 
   def test_special_2K
-    assert_equal 150, Checkout.new.checkout('KK'), 'discount 10 for 10H'
+    assert_equal 120, Checkout.new.checkout('KK'), 'discount 20 for 2K'
   end
 
   def test_3N
@@ -223,4 +223,5 @@ class ClientTest < Minitest::Test
     assert_equal 740, basket, '4F, pay for 3F because third free'
   end
 end
+
 
