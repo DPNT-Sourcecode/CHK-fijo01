@@ -189,8 +189,9 @@ class Checkout
   def specials_v
     quantity_of_v = @item_list.count('V')
     v_discounts = 0
-    
+    (quantity_of_v / 2).times { v_discounts += 10 }
     v_discounts
   end
 end
+
 
