@@ -181,10 +181,11 @@ class Checkout
 
   def specials_u
     u_discounts = 0
-    
+    @item_list.count('U').times { |u| (u_discounts += @prices['U']) if ((u + 1) % 4).zero? }
     u_discounts
   end
 end
+
 
 
 
