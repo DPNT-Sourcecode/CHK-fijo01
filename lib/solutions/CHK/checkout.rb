@@ -140,6 +140,26 @@ class Checkout
     number_of_k.times { |k| (k_discounts += 10) if ((k + 1) % 2).zero? }
     k_discounts
   end
+
+  def specials_n
+    number_of_n = @item_list.count('N')
+    free_n = @item_list.count('E') / 2
+    n_discounts = 0
+
+    # Free B when you buy 2E is a b_discount:
+    # But only discount B if one is checked out!
+
+    unless number_of_b.zero?
+      free_b.times { b_discounts += @prices['B'] }
+    end
+
+    # Now handle remainder B:
+    remaining_b = number_of_b - free_b
+    (remaining_b / 2).times { b_discounts += 15 }
+
+    b_discounts
+  end
 end
+
 
 
