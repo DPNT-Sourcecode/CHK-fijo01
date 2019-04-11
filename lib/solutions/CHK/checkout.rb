@@ -166,15 +166,21 @@ class Checkout
   end
 
   def specials_q
-    number_of_q = @item_list.count('B')
+    number_of_q = @item_list.count('Q')
     free_q = @item_list.count('R') / 3
 
     q_discounts = 0
+
+    unless number_of_q.zero?
+      free_q.times { q_discounts += @prices['Q'] }
+    end
+    
     @item_list.count('Q').times { |q| (q_discounts += 10) if ((q + 1) % 3).zero? }
     q_discounts
   end
 
 end
+
 
 
 
