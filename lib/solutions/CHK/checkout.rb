@@ -79,6 +79,7 @@ class Checkout
     #   quantity_of_a -= discount_5a * 5
     # end
 
+    # Refactored ln 76-80 to reduce LOC:
     (quantity_of_a / 5).times do
       a_discounts += 50
       quantity_of_a -= 5
@@ -140,4 +141,5 @@ class Checkout
     k_discounts
   end
 end
+
 
