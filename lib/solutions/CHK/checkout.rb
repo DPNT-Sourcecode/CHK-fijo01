@@ -66,6 +66,7 @@ class Checkout
     discount += specials_h
     discount += specials_k
     discount += specials_m
+    discount += specials_p
 
     discount
   end
@@ -156,4 +157,9 @@ class Checkout
 
     m_discounts
   end
+
+  def specials_p
+    
+  end
 end
+
