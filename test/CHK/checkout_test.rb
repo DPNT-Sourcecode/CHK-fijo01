@@ -112,21 +112,40 @@ class ClientTest < Minitest::Test
   end
 
   def test_price_P
-    assert_equal 50, Checkout.new.checkout('P'), 'Correctly prices a single F'
+    assert_equal 50, Checkout.new.checkout('P'), 'Correctly prices a single P'
   end
 
   def test_price_Q
-    assert_equal 30, Checkout.new.checkout('Q'), 'Correctly prices a single F'
+    assert_equal 30, Checkout.new.checkout('Q'), 'Correctly prices a single Q'
   end
 
   def test_price_R
-    assert_equal 50, Checkout.new.checkout('R'), 'Correctly prices a single F'
+    assert_equal 50, Checkout.new.checkout('R'), 'Correctly prices a single R'
   end
 
   def test_price_S
-    assert_equal 30, Checkout.new.checkout('S'), 'Correctly prices a single F'
+    assert_equal 30, Checkout.new.checkout('S'), 'Correctly prices a single S'
   end
 
+  def test_price_T
+    assert_equal 20, Checkout.new.checkout('T'), 'Correctly prices a single T'
+  end
+
+  def test_price_U
+    assert_equal 40, Checkout.new.checkout('U'), 'Correctly prices a single U'
+  end
+
+  def test_price_V
+    assert_equal 50, Checkout.new.checkout('V'), 'Correctly prices a single V'
+  end
+
+  def test_price_N
+    assert_equal 40, Checkout.new.checkout('N'), 'Correctly prices a single N'
+  end
+
+  def test_price_N
+    assert_equal 40, Checkout.new.checkout('N'), 'Correctly prices a single N'
+  end
   # Add failed deploy-tests
   def test_freeB
     assert_equal 80, Checkout.new.checkout('EEB'), 'When 2E, B is free'
@@ -156,3 +175,4 @@ class ClientTest < Minitest::Test
     assert_equal 30, basket, '4F, pay for 3F because third free'
   end
 end
+
