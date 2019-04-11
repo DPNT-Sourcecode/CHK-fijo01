@@ -163,6 +163,13 @@ class Checkout
     @item_list.count('P').times { |p| (p_discounts += 50) if ((p + 1) % 5).zero? }
     p_discounts
   end
+
+  def specials_q
+    q_discounts = 0
+    q_discounts
+  end
+
 end
+
 
 

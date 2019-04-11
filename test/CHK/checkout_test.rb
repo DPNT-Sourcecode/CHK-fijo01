@@ -180,7 +180,7 @@ class ClientTest < Minitest::Test
   end
 
   def test_special_3Q
-    
+    assert_equal 80, Checkout.new.checkout('QQQ'), '3Q for 80'
   end
   # Add failed deploy-tests
   def test_freeB
@@ -211,5 +211,6 @@ class ClientTest < Minitest::Test
     assert_equal 30, basket, '4F, pay for 3F because third free'
   end
 end
+
 
 
