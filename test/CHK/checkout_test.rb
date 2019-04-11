@@ -61,6 +61,7 @@ class ClientTest < Minitest::Test
   end
 
   def test_price_K
+    # Edited for new price K=70, was 80
     assert_equal 80, Checkout.new.checkout('K'), 'Correctly prices a single K'
   end
 
@@ -222,3 +223,4 @@ class ClientTest < Minitest::Test
     assert_equal 740, basket, '4F, pay for 3F because third free'
   end
 end
+
