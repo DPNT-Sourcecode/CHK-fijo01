@@ -73,10 +73,15 @@ class Checkout
     a_discounts = 0
     quantity_of_a = @item_list.count('A')
 
-    if quantity_of_a >= 5
-      discount_5a = quantity_of_a / 5
-      a_discounts += (discount_5a * 50)
-      quantity_of_a -= discount_5a * 5
+    # if quantity_of_a >= 5
+    #   discount_5a = quantity_of_a / 5
+    #   a_discounts += (discount_5a * 50)
+    #   quantity_of_a -= discount_5a * 5
+    # end
+
+    (quantity_of_a / 5).times do
+      a_discounts += 50
+      quantity_of_a -= 5
     end
 
     # Refactored to reduce LOC:
@@ -135,3 +140,4 @@ class Checkout
     k_discounts
   end
 end
+
