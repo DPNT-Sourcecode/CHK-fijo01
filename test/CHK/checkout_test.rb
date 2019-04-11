@@ -87,7 +87,6 @@ class ClientTest < Minitest::Test
   #  - {"method":"checkout","params":["FFFF"],"id":"CHK_R3_041"}, expected: 30, got: 40
   #  - {"method":"checkout","params":["FFFFFF"],"id":"CHK_R3_042"}, expected: 40, got: 60
   # You have received a penalty of: 10 min
-
-
 end
+
 

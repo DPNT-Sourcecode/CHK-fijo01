@@ -84,9 +84,23 @@ class Checkout
   end
 
   def specials_f
+    number_of_f = @item_list.count('F')
+    free_f = number_of_f / 3 # every third F is free
     f_discounts = 0
-    (@item_list.count('F') / 2).times { @item_list.push('F') }
+
+
+    if (number_of_f % 3).zero? # at least one F free
+
+    end
+
+
+    unless number_of_f.zero?
+      free_b.times { b_discounts += @prices['B'] }   
+    end
+    # free item should be added by shopper, not checkout
+    # (@item_list.count('F') / 2).times { @item_list.push('F') }
     f_discounts
   end
 
 end
+
