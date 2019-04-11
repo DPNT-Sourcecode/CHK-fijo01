@@ -65,6 +65,7 @@ class Checkout
     discount += specials_f
     discount += specials_h
     discount += specials_k
+    discount += specials_m
 
     discount
   end
@@ -141,25 +142,22 @@ class Checkout
     k_discounts
   end
 
-  def specials_n
-    number_of_n = @item_list.count('N')
-    free_n = @item_list.count('E') / 2
-    n_discounts = 0
+  def specials_m
+    number_of_m = @item_list.count('M')
+    free_m = @item_list.count('N') / 3
+    m_discounts = 0
 
-    # Free B when you buy 2E is a b_discount:
-    # But only discount B if one is checked out!
+    # Free M when you buy 3N is a m_discount:
+    # But only discount M if one is checked out!
 
-    unless number_of_b.zero?
-      free_b.times { b_discounts += @prices['B'] }
+    unless number_of_m.zero?
+      free_m.times { m_discounts += @prices['M'] }
     end
 
-    # Now handle remainder B:
-    remaining_b = number_of_b - free_b
-    (remaining_b / 2).times { b_discounts += 15 }
-
-    b_discounts
+    m_discounts
   end
 end
+
 
 
 
