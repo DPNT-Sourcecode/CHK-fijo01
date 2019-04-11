@@ -174,12 +174,12 @@ class Checkout
     unless number_of_q.zero?
       free_q.times { q_discounts += @prices['Q'] }
     end
-    
+
     @item_list.count('Q').times { |q| (q_discounts += 10) if ((q + 1) % 3).zero? }
     q_discounts
   end
-
 end
+
 
 
 
