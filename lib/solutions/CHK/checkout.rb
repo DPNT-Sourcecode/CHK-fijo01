@@ -68,6 +68,7 @@ class Checkout
     discount += specials_m
     discount += specials_p
     discount += specials_q
+    discount += specials_u
 
     discount
   end
@@ -179,6 +180,7 @@ class Checkout
     q_discounts
   end
 end
+
 
 
 
