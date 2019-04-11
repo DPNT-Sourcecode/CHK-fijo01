@@ -243,7 +243,16 @@ class ClientTest < Minitest::Test
     basket = Checkout.new.checkout('FFFF')
     assert_equal 30, basket, '4F, pay for 3F because third free'
   end
+
+  # ["PPPPQRUVPQRUVPQRUVSU"],"id":"CHK_R4_001"}, expected: 740, got: 730
+  def test_PPPPQRUVPQRUVPQRUVSU
+    basket = Checkout.new.checkout('PPPPQRUVPQRUVPQRUVSU')
+    # PPPPPP QQQ RRR S UUUU VVV
+    # 250 + []  + 30 + 120 + 130
+    assert_equal 740, basket, '4F, pay for 3F because third free'
+  end
 end
+
 
 
 
