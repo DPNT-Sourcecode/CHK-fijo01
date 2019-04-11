@@ -59,4 +59,9 @@ describe Checkout do
   it 'buying 2E gets you the B free, if B also purchased' do
     expect(Checkout.new.checkout('EEB')).to eq 80
   end
+
+  it 'correctly prices group specials' do
+    expect(Checkout.new.checkout('XYZ')).to eq 45
+  end
 end
+
