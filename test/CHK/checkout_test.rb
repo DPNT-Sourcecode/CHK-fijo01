@@ -74,6 +74,11 @@ class ClientTest < Minitest::Test
     assert_equal 20, basket, 'Correctly prices two F (third is free)'
   end
 
+  def test_two_special_FF
+    basket = Checkout.new.checkout('FFFFFF')
+    assert_equal 40, basket, '6F should be price of 4F'
+  end
+
   # def test_FF_extra_free
   #   # R2 wording was bad. *Now* the free F is added by the system:
   #   basket = Checkout.new
@@ -88,5 +93,6 @@ class ClientTest < Minitest::Test
   #  - {"method":"checkout","params":["FFFFFF"],"id":"CHK_R3_042"}, expected: 40, got: 60
   # You have received a penalty of: 10 min
 end
+
 
 
