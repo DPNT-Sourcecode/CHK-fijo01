@@ -155,6 +155,10 @@ class ClientTest < Minitest::Test
     assert_equal 50, Checkout.new.checkout('Z'), 'Correctly prices a single Z'
   end
 
+  def test_special_5H
+    assert_equal 10, Checkout.new.checkout('H'), 'Correctly prices a single H'    
+  end
+
   # Add failed deploy-tests
   def test_freeB
     assert_equal 80, Checkout.new.checkout('EEB'), 'When 2E, B is free'
@@ -184,5 +188,6 @@ class ClientTest < Minitest::Test
     assert_equal 30, basket, '4F, pay for 3F because third free'
   end
 end
+
 
 
