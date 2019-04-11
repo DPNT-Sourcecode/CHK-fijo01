@@ -139,9 +139,8 @@ class Checkout
   end
 
   def specials_k
-    number_of_k = @item_list.count('K')
     k_discounts = 0
-    number_of_k.times { |k| (k_discounts += 10) if ((k + 1) % 2).zero? }
+    @item_list.count('K').times { |k| (k_discounts += 10) if ((k + 1) % 2).zero? }
     k_discounts
   end
 
@@ -179,7 +178,14 @@ class Checkout
     @item_list.count('Q').times { |q| (q_discounts += 10) if ((q + 1) % 3).zero? }
     q_discounts
   end
+
+  def specials_u
+    u_discounts = 0
+    
+    u_discounts
+  end
 end
+
 
 
 
