@@ -110,4 +110,21 @@ class Checkout
 
     f_discounts
   end
+
+  def specials_h
+    h_discounts = 0
+    quantity_of_h = @item_list.count('H')
+
+    # if quantity_of_h >= 10
+    #   discount_10h = quantity_of_h / 10
+    #   h_discounts += (discount_10h * 20)
+    #   quantity_of_h -= discount_10h * 10
+    # end
+
+    (quantity_of_h / 5).times { h_discounts += 5 }
+
+    h_discounts
+  end
+
 end
+
