@@ -212,7 +212,7 @@ class ClientTest < Minitest::Test
   end
 
   def test_4V
-    assert_equal 180, Checkout.new.checkout('VVVV'), 'Correct pricing of 6V (270)'
+    assert_equal 180, Checkout.new.checkout('VVVV'), 'Correct pricing of 4V (130+50)'
   end
 
   # Add failed deploy-tests
@@ -244,6 +244,7 @@ class ClientTest < Minitest::Test
     assert_equal 30, basket, '4F, pay for 3F because third free'
   end
 end
+
 
 
 
