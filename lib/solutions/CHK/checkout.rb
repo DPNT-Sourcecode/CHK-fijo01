@@ -34,13 +34,15 @@ class Checkout
 
     discount_group = get_discount_group
 
-
-
+    # Apply the discount to reduce each group to cost 45
+    discount_group.each_slice(3) do |discounted_group|
+      group_discount += (checkout(discounted_group) - 45)
+    end
 
     group_discount
   end
 
-  def get_discounted_group
+  def get_discount_group
     discount_group = @item_list.select! { |item| ['S', 'T', 'X', 'Y', 'Z'].include?(item) }
     # Z = 21, Y = 20, T = 20, S = 20, X = 17
 
@@ -214,6 +216,7 @@ class Checkout
     v_discounts
   end
 end
+
 
 
 
