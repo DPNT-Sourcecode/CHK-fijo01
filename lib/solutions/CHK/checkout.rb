@@ -55,19 +55,19 @@ class Checkout
     # Discount only in groups of 3, extra items go back in list
     (discount_group.count % 3).times do
       if discount_group.include?('Z')
-        @item_list.push(discount_group.delete_at(index('Z')))
+        @item_list.push(discount_group.delete_at(discount_group.index('Z')))
         next
       elsif discount_group.include?('Y')
-        @item_list.push(discount_group.delete_at(index('Y')))
+        @item_list.push(discount_group.delete_at(discount_group.index('Y')))
         next
       elsif discount_group.include?('T')
-        @item_list.push(discount_group.delete_at(index('T')))
+        @item_list.push(discount_group.delete_at(discount_group.index('T')))
         next
       elsif discount_group.include?('S')
-        @item_list.push(discount_group.delete_at(index('S')))
+        @item_list.push(discount_group.delete_at(discount_group.index('S')))
         next
       elsif discount_group.include?('X')
-        @item_list.push(discount_group.delete_at(index('X')))
+        @item_list.push(discount_group.delete_at(discount_group.index('X')))
         next
       end
     end
@@ -223,10 +223,3 @@ class Checkout
     v_discounts
   end
 end
-
-
-
-
-
-
-
