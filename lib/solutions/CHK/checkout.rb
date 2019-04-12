@@ -39,9 +39,16 @@ class Checkout
     discount_group = @item_list.select! {|item| ['S', 'T', 'X', 'Y', 'Z'].include?(item)}
     # Z = 21 ... X = 17
     
-    
+    # Discount in groups of 3
+    undiscounted = discount_group.count % 3
+
+    undiscounted.times do |item|
+
+    end
+
+
     # @item_list.each |item| do
-    # notice if item is part of discounted group
+    # notice if item is part of discounted group - DONE
     # if we see one, increment accumulator and remember the item
     # when accumulator gets to 3:
     #  apply appropriate discount so cost is 45
@@ -206,5 +213,6 @@ class Checkout
     v_discounts
   end
 end
+
 
 
