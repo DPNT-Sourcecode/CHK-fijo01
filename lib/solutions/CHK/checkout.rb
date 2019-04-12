@@ -45,28 +45,28 @@ class Checkout
 
   def get_discount_group
     discount_group = []
-    discount_group = @item_list.select! { |item| ['S', 'T', 'X', 'Y', 'Z'].include?(item) }
+    discount_group = @item_list.select { |item| ['S', 'T', 'X', 'Y', 'Z'].include?(item) }
     # Z = 21, Y = 20, T = 20, S = 20, X = 17
 
-    # Discount only in groups of 3, extra items go back in list
-    (discount_group.count % 3).times do
-      if discount_group.include?('Z')
-        @item_list.push(discount_group.delete_at(index('Z')))
-        next
-      elsif discount_group.include?('Y')
-        @item_list.push(discount_group.delete_at(index('Y')))
-        next
-      elsif discount_group.include?('T')
-        @item_list.push(discount_group.delete_at(index('T')))
-        next
-      elsif discount_group.include?('S')
-        @item_list.push(discount_group.delete_at(index('S')))
-        next
-      elsif discount_group.include?('X')
-        @item_list.push(discount_group.delete_at(index('X')))
-        next
-      end
-    end
+    # # Discount only in groups of 3, extra items go back in list
+    # (discount_group.count / 3).times do
+    #   if discount_group.include?('Z')
+    #     @item_list.push(discount_group.delete_at(index('Z')))
+    #     next
+    #   elsif discount_group.include?('Y')
+    #     @item_list.push(discount_group.delete_at(index('Y')))
+    #     next
+    #   elsif discount_group.include?('T')
+    #     @item_list.push(discount_group.delete_at(index('T')))
+    #     next
+    #   elsif discount_group.include?('S')
+    #     @item_list.push(discount_group.delete_at(index('S')))
+    #     next
+    #   elsif discount_group.include?('X')
+    #     @item_list.push(discount_group.delete_at(index('X')))
+    #     next
+    #   end
+    # end
 
     discount_group
   end
@@ -219,6 +219,7 @@ class Checkout
     v_discounts
   end
 end
+
 
 
 
