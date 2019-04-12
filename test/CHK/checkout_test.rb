@@ -228,4 +228,3 @@ class ClientTest < Minitest::Test
     assert_equal 730, basket, '4F, pay for 3F because third free'
   end
 end
-
