@@ -38,7 +38,7 @@ class Checkout
     # Apply the discount to reduce each group to cost 45
     discount_group.each_slice(3) do |discounted_group|
       group_sum = 0
-      discounted_group.each { |item| group_sum += prices[item] }
+      discounted_group.each { |item| group_sum += @prices[item] }
       group_discount += (group_sum - 45)
     end
     
@@ -223,6 +223,7 @@ class Checkout
     v_discounts
   end
 end
+
 
 
 
