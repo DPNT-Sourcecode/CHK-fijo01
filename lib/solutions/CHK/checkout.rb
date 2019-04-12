@@ -174,7 +174,9 @@ class Checkout
 
   def specials_p
     p_discounts = 0
-    @item_list.count('P').times { |p| (p_discounts += 50) if ((p + 1) % 5).zero? }
+    # @item_list.count('P').times { |p| (p_discounts += 50) if ((p + 1) % 5).zero? }
+    @item_list.count('P').times { |p| puts p }
+
     p_discounts
   end
 
@@ -216,6 +218,7 @@ class Checkout
     v_discounts
   end
 end
+
 
 
 
