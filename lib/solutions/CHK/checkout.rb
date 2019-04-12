@@ -223,11 +223,3 @@ class Checkout
     v_discounts
   end
 end
-
-
-
-
-
-
-
-
