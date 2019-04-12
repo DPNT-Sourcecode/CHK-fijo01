@@ -51,9 +51,7 @@ class Checkout
     # Remove from @item_list for now
     discount_group.each { |item| @item_list.delete_at((@item_list.index(item))) }
 
-    discount_group.each { |item| puts item}
     # Discount only in groups of 3, extra items go back in list
-    p discount_group.count % 3
     (discount_group.count % 3).times do
       if discount_group.include?('Z')
         @item_list.push(discount_group.delete_at(discount_group.index('Z')))
@@ -224,4 +222,5 @@ class Checkout
     v_discounts
   end
 end
+
 
