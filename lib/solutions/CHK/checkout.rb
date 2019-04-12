@@ -21,11 +21,11 @@ class Checkout
     checkout_value = 0
     @item_list = skus.chars
 
+    @item_list.each { |item| checkout_value += @prices[item] }
+
     checkout_value -= group_specials
 
     checkout_value -= special_offers
-
-    @item_list.each { |item| checkout_value += @prices[item] }
 
     checkout_value
   end
@@ -218,4 +218,5 @@ class Checkout
     v_discounts
   end
 end
+
 
