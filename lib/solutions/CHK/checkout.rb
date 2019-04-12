@@ -48,6 +48,10 @@ class Checkout
     discount_group = @item_list.select { |item| ['S', 'T', 'X', 'Y', 'Z'].include?(item) }
     # Z = 21, Y = 20, T = 20, S = 20, X = 17
 
+    # Remove from @item_list for now
+    discount_group.each { |item| @item_list.delete_at((@item_list.index(item))) }
+
+    discount_group.each { |item| puts item}
     # # Discount only in groups of 3, extra items go back in list
     # (discount_group.count / 3).times do
     #   if discount_group.include?('Z')
@@ -219,6 +223,7 @@ class Checkout
     v_discounts
   end
 end
+
 
 
 
