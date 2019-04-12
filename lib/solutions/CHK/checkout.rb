@@ -44,7 +44,6 @@ class Checkout
   end
 
   def get_discount_group
-    discount_group = []
     discount_group = @item_list.select { |item| ['S', 'T', 'X', 'Y', 'Z'].include?(item) }
     # Z = 21, Y = 20, T = 20, S = 20, X = 17
 
@@ -222,5 +221,6 @@ class Checkout
     v_discounts
   end
 end
+
 
 
