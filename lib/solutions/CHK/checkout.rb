@@ -20,11 +20,12 @@ class Checkout
 
     checkout_value = 0
     @item_list = skus.chars
-    @item_list.each { |item| checkout_value += @prices[item] }
 
     checkout_value -= group_specials
 
     checkout_value -= special_offers
+
+    @item_list.each { |item| checkout_value += @prices[item] }
 
     checkout_value
   end
@@ -174,8 +175,7 @@ class Checkout
 
   def specials_p
     p_discounts = 0
-    # @item_list.count('P').times { |p| (p_discounts += 50) if ((p + 1) % 5).zero? }
-    @item_list.count('P').times { |p| puts p }
+    @item_list.count('P').times { |p| (p_discounts += 50) if ((p + 1) % 5).zero? }
 
     p_discounts
   end
@@ -218,3 +218,4 @@ class Checkout
     v_discounts
   end
 end
+
