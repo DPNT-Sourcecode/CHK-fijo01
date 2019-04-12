@@ -16,5 +16,7 @@ I had a few possible approachs to tackle this one. Mainly they come under the fo
   * Extract any S, T, X, Y, or Z that are in the item_list, into its own array:
     *1. If array length isn't multiple of 3, return elements back to item_list, until it is
     2. Maximize discount by removing from consideration (for discounting) the cheapest items (i.e. X)
-    3. Z is most expensive of the discounted group so only remove it from discount group as a last resort (e.g. ZZZZ, 3Z for 45, 1Z charged at 21* 
+    3. Z is most expensive of the discounted group so only remove it from discount group as a last resort (e.g. ZZZZ, 3Z for 45, 1Z charged at 21*
+    4. For each group of 3, calculate their total cost and apply discount so that they only cost 45.
+
 
