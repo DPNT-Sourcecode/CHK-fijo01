@@ -32,24 +32,7 @@ class Checkout
   def group_specials
     group_discount = 0
 
-    group_accumulator = 0
-
-    discount_group = @item_list.select! {|item| ['S', 'T', 'X', 'Y', 'Z'].include?(item)}
-    # Z = 21 ... X = 17
-
-
-    # @item_list.each |item| do
-      # notice if item is part of discounted group
-      # if we see one, increment accumulator and remember the item
-      # when accumulator gets to 3:
-        #  apply appropriate discount so cost is 45
-        #  remove items from the list 
-        # break out of loop
-      
-    # end
-
-    # items_in_group = ['S', 'T', 'X', 'Y', 'Z']
-    
+    items_in_group = ['S', 'T', 'X', 'Y', 'Z']
 
     # valid_for_group_discount
 
@@ -203,3 +186,4 @@ class Checkout
     v_discounts
   end
 end
+
