@@ -186,7 +186,7 @@ class ClientTest < Minitest::Test
   end
 
   def test_group_special
-    assert_equal 45, Checkout.new.checkout('TXY'), 'Correct pricing of group purchase (45)'    
+    assert_equal 45, Checkout.new.checkout('TXY'), 'Correct pricing of group purchase (45)'
   end
 
   # Add failed deploy-tests
@@ -228,3 +228,4 @@ class ClientTest < Minitest::Test
     assert_equal 730, basket, '4F, pay for 3F because third free'
   end
 end
+
