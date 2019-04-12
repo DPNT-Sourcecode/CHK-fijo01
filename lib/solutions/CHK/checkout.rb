@@ -19,7 +19,7 @@ class Checkout
     return -1 unless /^[A-Z]*$/ === skus
 
     checkout_value = 0
-    @item_list = skus.chars.sort
+    @item_list = skus.chars
     @item_list.each { |item| checkout_value += @prices[item] }
 
     checkout_value -= group_specials
@@ -38,40 +38,32 @@ class Checkout
     # Z = 21, Y = 20, T = 20, S = 20, X = 17
 
     # Discount only in groups of 3, extra items go back in list
-    undiscounted = discount_group.count % 3
 
-    undiscounted.times do
+    (discount_group.count % 3).times do
       if discount_group.include?('Z')
         @item_list.push('Z')
+        discount_group.delete_at(index('Z'))
         next
       elsif discount_group.include?('Y')
         @item_list.push('Y')
+        discount_group.delete_at(index('Y'))
         next
       elsif discount_group.include?('T')
         @item_list.push('T')
+        discount_group.delete_at(index('T'))
         next
       elsif discount_group.include?('S')
+        discount_group.delete_at(index('S'))
         @item_list.push('S')
         next
       elsif discount_group.include?('X')
+        discount_group.delete_at(index('X'))
         @item_list.push('X')
         next
       end
     end
 
-    # @item_list.each |item| do
-    # notice if item is part of discounted group - DONE
-    # if we see one, increment accumulator and remember the item
-    # when accumulator gets to 3:
-    #  apply appropriate discount so cost is 45
-    #  remove items from the list
-    # break out of loop
-
-    # end
-
-    # items_in_group = ['S', 'T', 'X', 'Y', 'Z']
-
-    # valid_for_group_discount
+    
 
     group_discount
   end
@@ -223,4 +215,5 @@ class Checkout
     v_discounts
   end
 end
+
 
